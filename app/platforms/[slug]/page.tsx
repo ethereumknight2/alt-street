@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import type { Metadata } from 'next/metadata';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ExternalLink } from 'lucide-react';
 
@@ -11,9 +11,9 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
 interface PlatformPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -24,7 +24,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PlatformPageProps): Promise<Metadata> {
-  const platform = getPlatformBySlug(params.slug);
+  const { slug } = await params;
+  const platform = getPlatformBySlug(slug);
 
   if (!platform) return {};
 
@@ -42,8 +43,9 @@ export async function generateMetadata({ params }: PlatformPageProps): Promise<M
   };
 }
 
-export default function PlatformPage({ params }: PlatformPageProps) {
-  const platform = getPlatformBySlug(params.slug);
+export default async function PlatformPage({ params }: PlatformPageProps) {
+  const { slug } = await params;
+  const platform = getPlatformBySlug(slug);
 
   if (!platform) {
     notFound();

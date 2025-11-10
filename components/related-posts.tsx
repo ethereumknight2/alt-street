@@ -1,4 +1,4 @@
-import type { Post } from 'contentlayer/generated';
+import type { Post } from '#site/content';
 import { PostCard } from '@/components/post-card';
 
 interface RelatedPostsProps {

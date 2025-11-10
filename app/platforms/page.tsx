@@ -1,4 +1,4 @@
-import type { Metadata } from 'next/metadata';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import { getAllPlatforms } from '@/lib/platforms';

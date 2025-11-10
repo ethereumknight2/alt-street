@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import Script from 'next/script';
 
 import './globals.css';
@@ -8,8 +7,6 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { SiteHeader } from '@/components/site-header';
 import { SiteFooter } from '@/components/site-footer';
 import { TooltipProvider } from '@/components/ui/tooltip';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
@@ -51,7 +48,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+        />
+      </head>
+      <body className="font-sans">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

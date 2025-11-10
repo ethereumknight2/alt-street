@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import type { Metadata } from 'next/metadata';
+import type { Metadata } from 'next';
 
 import { getPostsByCategory, paginatePosts } from '@/lib/posts';
 import { siteConfig } from '@/lib/config';
@@ -9,12 +9,12 @@ import { PostCard } from '@/components/post-card';
 import { SubscribeForm } from '@/components/subscribe-form';
 
 interface CategoryPageProps {
-  params: {
+  params: Promise<{
     category: string;
-  };
-  searchParams: {
+  }>;
+  searchParams: Promise<{
     page?: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -24,7 +24,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: CategoryPageProps): Promise<Metadata> {
-  const category = siteConfig.categories.find((c) => c.slug === params.category);
+  const { category: categorySlug } = await params;
+  const category = siteConfig.categories.find((c) => c.slug === categorySlug);
 
   if (!category) return {};
 
@@ -42,21 +43,24 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   };
 }
 
-export default function CategoryPage({ params, searchParams }: CategoryPageProps) {
-  const category = siteConfig.categories.find((c) => c.slug === params.category);
+export default async function CategoryPage({ params, searchParams }: CategoryPageProps) {
+  const { category: categorySlug } = await params;
+  const { page: pageParam } = await searchParams;
+
+  const category = siteConfig.categories.find((c) => c.slug === categorySlug);
 
   if (!category) {
     notFound();
   }
 
-  const allPosts = getPostsByCategory(params.category);
-  const page = Number(searchParams.page) || 1;
+  const allPosts = getPostsByCategory(categorySlug);
+  const page = Number(pageParam) || 1;
   const { posts, totalPages, hasNext, hasPrev } = paginatePosts(allPosts, page, 12);
 
   return (
     <div className="container py-12">
       <Breadcrumbs
-        items={[{ name: 'Categories', href: '/' }, { name: category.name, href: params.category }]}
+        items={[{ name: 'Categories', href: '/' }, { name: category.name, href: categorySlug }]}
       />
 
       <div className="mb-12">
@@ -81,7 +85,7 @@ export default function CategoryPage({ params, searchParams }: CategoryPageProps
             <div className="flex justify-center gap-2">
               {hasPrev && (
                 <a
-                  href={`/categories/${params.category}?page=${page - 1}`}
+                  href={`/categories/${categorySlug}?page=${page - 1}`}
                   className="rounded-md border px-4 py-2 hover:bg-muted"
                 >
                   Previous
@@ -92,7 +96,7 @@ export default function CategoryPage({ params, searchParams }: CategoryPageProps
               </span>
               {hasNext && (
                 <a
-                  href={`/categories/${params.category}?page=${page + 1}`}
+                  href={`/categories/${categorySlug}?page=${page + 1}`}
                   className="rounded-md border px-4 py-2 hover:bg-muted"
                 >
                   Next
