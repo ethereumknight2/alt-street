@@ -1,0 +1,32 @@
+id: acretrader
+name: AcreTrader
+slug: acretrader
+url: https://www.acretrader.com
+category: farmland
+description: AcreTrader allows accredited investors to invest in fractional shares of U.S. farmland, providing access to institutional-quality agricultural real estate.
+fees: 2% management fee + 5-10% on sale
+minInvestment: $10,000
+assetType: Fractional farmland ownership
+region: United States
+taxForm: K-1
+liquidity: Illiquid (3-10 year hold)
+affiliateId: acretrader
+founded: '2018'
+pros:
+  - Access to institutional-quality farmland
+  - Professional farm management included
+  - Diversification across crop types and regions
+  - Passive income from crop sales
+  - Historical farmland appreciation
+cons:
+  - High minimum investment ($10,000+)
+  - Long illiquidity period (3-10 years)
+  - K-1 tax forms add complexity
+  - Limited secondary market
+  - Accredited investor requirement
+features:
+  - Professionally managed farms
+  - Quarterly distributions
+  - Detailed property analytics
+  - Geographic diversification
+  - Transparent reporting

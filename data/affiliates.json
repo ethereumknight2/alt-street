@@ -1,0 +1,72 @@
+[
+  {
+    "id": "acretrader",
+    "name": "AcreTrader",
+    "url": "https://www.acretrader.com",
+    "description": "Invest in fractional farmland starting at $10,000",
+    "cta": "Explore AcreTrader"
+  },
+  {
+    "id": "farmtogether",
+    "name": "FarmTogether",
+    "url": "https://www.farmtogether.com",
+    "description": "Diversified farmland investing with lower minimums",
+    "cta": "Get Started with FarmTogether"
+  },
+  {
+    "id": "masterworks",
+    "name": "Masterworks",
+    "url": "https://www.masterworks.com",
+    "description": "Invest in blue-chip art for as little as $20 per share",
+    "cta": "Join Masterworks"
+  },
+  {
+    "id": "vinovest",
+    "name": "Vinovest",
+    "url": "https://www.vinovest.co",
+    "description": "Invest in fine wine with professional storage and insurance",
+    "cta": "Start Investing in Wine"
+  },
+  {
+    "id": "royalty-exchange",
+    "name": "Royalty Exchange",
+    "url": "https://www.royaltyexchange.com",
+    "description": "Buy and sell music royalty streams",
+    "cta": "Explore Royalty Exchange"
+  },
+  {
+    "id": "songvest",
+    "name": "SongVest",
+    "url": "https://www.songvest.com",
+    "description": "Fractional ownership in music royalties",
+    "cta": "Invest with SongVest"
+  },
+  {
+    "id": "nori",
+    "name": "Nori",
+    "url": "https://nori.com",
+    "description": "Buy carbon removal credits directly from farmers",
+    "cta": "Remove Carbon with Nori"
+  },
+  {
+    "id": "puro-earth",
+    "name": "Puro.earth",
+    "url": "https://puro.earth",
+    "description": "Carbon removal marketplace with rigorous verification",
+    "cta": "Explore Puro.earth"
+  },
+  {
+    "id": "render",
+    "name": "Render Network",
+    "url": "https://rendernetwork.com",
+    "description": "Decentralized GPU rendering network powered by RNDR token",
+    "cta": "Learn About Render"
+  },
+  {
+    "id": "akash",
+    "name": "Akash Network",
+    "url": "https://akash.network",
+    "description": "Open-source decentralized cloud compute marketplace",
+    "cta": "Explore Akash"
+  }
+]

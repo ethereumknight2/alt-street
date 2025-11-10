@@ -1,0 +1,32 @@
+id: royalty-exchange
+name: Royalty Exchange
+slug: royalty-exchange
+url: https://www.royaltyexchange.com
+category: royalties
+description: Royalty Exchange is an online marketplace where investors can bid on and purchase music royalty streams from artists, songwriters, and producers.
+fees: 10% buyer's premium + $30 registration
+minInvestment: Varies by auction ($500-$50,000+)
+assetType: Music royalty rights
+region: Global
+taxForm: 1099-MISC
+liquidity: Illiquid (secondary sales possible)
+affiliateId: royalty-exchange
+founded: '2011'
+pros:
+  - Direct ownership of music royalty streams
+  - Wide range of catalog sizes and genres
+  - Transparent auction process
+  - Detailed earnings history provided
+  - Quarterly royalty payments
+cons:
+  - Royalty income can be unpredictable
+  - Difficult to value future earnings
+  - Limited liquidity after purchase
+  - Music streaming rates may decline
+  - Due diligence requires music industry knowledge
+features:
+  - Auction-based marketplace
+  - Detailed catalog analytics
+  - Royalty payment tracking
+  - Copyright transfer at closing
+  - Access to diverse music genres

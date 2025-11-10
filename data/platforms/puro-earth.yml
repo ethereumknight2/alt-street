@@ -1,0 +1,32 @@
+id: puro-earth
+name: Puro.earth
+slug: puro-earth
+url: https://puro.earth
+category: carbon-markets
+description: Puro.earth operates a verified carbon removal marketplace for engineered and nature-based CO2 removal with rigorous third-party verification.
+fees: Marketplace fee included in pricing
+minInvestment: Contact for pricing
+assetType: Carbon removal certificates (CORCs)
+region: Europe & Global
+taxForm: Invoice
+liquidity: Spot & forward contracts
+affiliateId: puro-earth
+founded: '2019'
+pros:
+  - Strict third-party verification
+  - Multiple carbon removal methods
+  - Forward contracts available
+  - Strong additionality standards
+  - European regulatory alignment
+cons:
+  - Higher prices than voluntary offsets
+  - Less transparent pricing
+  - Limited spot market liquidity
+  - Primarily serves corporate buyers
+  - Minimum purchase volumes
+features:
+  - Verified carbon removal certificates
+  - Multiple removal methodologies
+  - Forward purchase agreements
+  - Registry and retirement tracking
+  - Corporate sustainability integration

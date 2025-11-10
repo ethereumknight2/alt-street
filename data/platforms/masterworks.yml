@@ -1,0 +1,32 @@
+id: masterworks
+name: Masterworks
+slug: masterworks
+url: https://www.masterworks.com
+category: collectibles
+description: Masterworks allows investors to buy shares in blue-chip artworks by artists like Banksy, Basquiat, and Warhol, making fine art investing accessible.
+fees: 1.5% annual management + 20% profit share
+minInvestment: $20 per share
+assetType: Fractional art ownership
+region: Global (U.S. based)
+taxForm: 1099-DIV
+liquidity: Secondary market available
+affiliateId: masterworks
+founded: '2017'
+pros:
+  - Low barrier to entry ($20/share)
+  - Access to museum-quality art
+  - SEC-qualified offerings
+  - Secondary market for liquidity
+  - Art market has low correlation to stocks
+cons:
+  - High fees (1.5% + 20% profit share)
+  - Typical hold period 3-10 years
+  - Art valuation is subjective
+  - Limited control over timing of sales
+  - Membership approval process
+features:
+  - SEC-qualified Reg A+ offerings
+  - Secondary market trading
+  - Professional art storage and insurance
+  - Regular portfolio updates
+  - Educational resources on art investing

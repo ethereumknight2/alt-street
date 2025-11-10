@@ -1,0 +1,32 @@
+id: vinovest
+name: Vinovest
+slug: vinovest
+url: https://www.vinovest.co
+category: collectibles
+description: Vinovest allows investors to build diversified fine wine portfolios with professional storage, insurance, and a team of sommeliers managing curation.
+fees: 1.9-2.85% annually (lower for larger portfolios)
+minInvestment: $1,000
+assetType: Fine wine bottles
+region: Global wines, U.S. storage
+taxForm: 1099-B
+liquidity: Liquid (sell anytime via platform)
+affiliateId: vinovest
+founded: '2019'
+pros:
+  - Low minimum investment ($1,000)
+  - Professional wine curation
+  - Bonded warehouse storage included
+  - Insurance coverage included
+  - Relatively liquid (can sell anytime)
+cons:
+  - Annual management fees
+  - Wine valuation can be subjective
+  - Storage and transaction fees on sales
+  - Market subject to taste trends
+  - Must trust platform's curation
+features:
+  - Automated portfolio management
+  - Professional storage and insurance
+  - Global wine sourcing
+  - Portfolio rebalancing
+  - Mobile app access

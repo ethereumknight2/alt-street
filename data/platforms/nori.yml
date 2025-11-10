@@ -1,0 +1,32 @@
+id: nori
+name: Nori
+slug: nori
+url: https://nori.com
+category: carbon-markets
+description: Nori is a carbon removal marketplace connecting buyers with farmers practicing regenerative agriculture to sequester carbon in soil.
+fees: Variable marketplace fees
+minInvestment: ~$15-30 per tonne
+assetType: Carbon removal credits (soil sequestration)
+region: United States
+taxForm: Receipt/Invoice
+liquidity: Spot market (immediate purchase)
+affiliateId: nori
+founded: '2017'
+pros:
+  - Direct purchase from farmers
+  - Transparent pricing and supply
+  - Focus on soil carbon sequestration
+  - Real-time certificate issuance
+  - Support for regenerative agriculture
+cons:
+  - No regulatory credit recognition yet
+  - Soil carbon permanence questions
+  - Limited to U.S. suppliers currently
+  - Verification methodology still evolving
+  - No secondary market
+features:
+  - Blockchain-based registry
+  - Per-tonne pricing transparency
+  - Supplier farm profiles
+  - Immediate certificate delivery
+  - Carbon removal verification
