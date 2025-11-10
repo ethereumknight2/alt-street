@@ -1,4 +1,4 @@
-import type { Metadata } from 'next/metadata';
+import type { Metadata } from 'next';
 
 import { generateSEO } from '@/lib/seo';
 import { SubscribeForm } from '@/components/subscribe-form';

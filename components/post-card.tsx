@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Calendar } from 'lucide-react';
 
-import type { Post } from 'contentlayer/generated';
+import type { Post } from '#site/content';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { formatDate } from '@/lib/utils';

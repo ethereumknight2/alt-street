@@ -1,26 +1,27 @@
 import { notFound } from 'next/navigation';
-import type { Metadata } from 'next/metadata';
-import { useMDXComponent } from 'next-contentlayer/hooks';
+import type { Metadata } from 'next';
 
-import { allPages } from 'contentlayer/generated';
+import { pages } from '#site/content';
 import { generateSEO } from '@/lib/seo';
 import { Prose } from '@/components/prose';
 import { mdxComponents } from '@/components/mdx-components';
+import { MDXContent } from '@/components/mdx-content';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
-  return allPages.map((page) => ({
+  return pages.map((page) => ({
     slug: page.slugAsParams,
   }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const page = allPages.find((p) => p.slugAsParams === params.slug);
+  const { slug } = await params;
+  const page = pages.find((p) => p.slugAsParams === slug);
 
   if (!page) return {};
 
@@ -38,20 +39,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default function Page({ params }: PageProps) {
-  const page = allPages.find((p) => p.slugAsParams === params.slug);
+export default async function Page({ params }: PageProps) {
+  const { slug } = await params;
+  const page = pages.find((p) => p.slugAsParams === slug);
 
   if (!page) {
     notFound();
   }
 
-  const MDXContent = useMDXComponent(page.body.code);
-
   return (
     <div className="container py-12">
       <article className="mx-auto max-w-4xl">
         <Prose>
-          <MDXContent components={mdxComponents} />
+          <MDXContent code={page.body} components={mdxComponents} />
         </Prose>
       </article>
     </div>

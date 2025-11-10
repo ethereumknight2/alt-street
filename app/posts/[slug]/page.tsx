@@ -8,9 +8,9 @@ import { mdxComponents } from '@/components/mdx-components';
 import { MDXContent } from '@/components/mdx-content';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -20,7 +20,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const page = pages.find((p) => p.slugAsParams === params.slug);
+  const { slug } = await params;
+  const page = pages.find((p) => p.slugAsParams === slug);
 
   if (!page) return {};
 
@@ -38,8 +39,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default function Page({ params }: PageProps) {
-  const page = pages.find((p) => p.slugAsParams === params.slug);
+export default async function Page({ params }: PageProps) {
+  const { slug } = await params;
+  const page = pages.find((p) => p.slugAsParams === slug);
 
   if (!page) {
     notFound();

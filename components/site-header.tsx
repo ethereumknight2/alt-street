@@ -27,7 +27,7 @@ export function SiteHeader() {
                     {item.name}
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
-                    {item.items.map((subItem) => (
+                    {item.items?.map((subItem) => (
                       <DropdownMenuItem key={subItem.href} asChild>
                         <Link href={subItem.href}>{subItem.name}</Link>
                       </DropdownMenuItem>

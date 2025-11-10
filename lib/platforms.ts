@@ -67,11 +67,13 @@ export function filterPlatforms(params: {
   }
 
   if (params.taxForm) {
-    platforms = platforms.filter((p) => p.taxForm.includes(params.taxForm));
+    const taxForm = params.taxForm;
+    platforms = platforms.filter((p) => p.taxForm.includes(taxForm));
   }
 
   if (params.region) {
-    platforms = platforms.filter((p) => p.region.includes(params.region));
+    const region = params.region;
+    platforms = platforms.filter((p) => p.region.includes(region));
   }
 
   return platforms;
