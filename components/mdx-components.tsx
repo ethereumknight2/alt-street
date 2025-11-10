@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import { Callout } from '@/components/callout';
 import { ProsCons } from '@/components/pros-cons';
@@ -13,12 +15,16 @@ import {
   TableRow,
 } from '@/components/ui/table';
 
+function SubscribeCta() {
+  return <SubscribeForm variant="inline" />;
+}
+
 export const mdxComponents = {
   Image,
   Callout,
   ProsCons,
   AffiliateButton,
-  SubscribeCta: () => <SubscribeForm variant="inline" />,
+  SubscribeCta,
   table: Table,
   thead: TableHeader,
   tbody: TableBody,

@@ -35,7 +35,11 @@ const posts = defineCollection({
     })
     .transform((data, { meta }) => {
       // Auto-generate slug from filename if not provided
-      const slug = data.slug || meta.path.replace(/^posts\//, '').replace(/\.mdx$/, '');
+      // Normalize the path to handle both Unix and Windows paths
+      const normalizedPath = meta.path.replace(/\\/g, '/');
+      // Extract the relative path after 'posts/'
+      const match = normalizedPath.match(/posts\/(.+)\.mdx$/);
+      const slug = data.slug || (match ? match[1] : meta.path.replace(/^posts\//, '').replace(/\.mdx$/, ''));
       return computedFields({ ...data, slug, body: data.body });
     }),
 });
@@ -52,7 +56,11 @@ const pages = defineCollection({
     })
     .transform((data, { meta }) => {
       // Auto-generate slug from filename if not provided
-      const slug = data.slug || meta.path.replace(/^pages\//, '').replace(/\.mdx$/, '');
+      // Normalize the path to handle both Unix and Windows paths
+      const normalizedPath = meta.path.replace(/\\/g, '/');
+      // Extract the relative path after 'pages/'
+      const match = normalizedPath.match(/pages\/(.+)\.mdx$/);
+      const slug = data.slug || (match ? match[1] : meta.path.replace(/^pages\//, '').replace(/\.mdx$/, ''));
       return {
         ...data,
         slug,

@@ -1,3 +1,5 @@
+'use client';
+
 import { AlertCircle, AlertTriangle, CheckCircle, Info } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
