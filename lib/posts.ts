@@ -1,28 +1,31 @@
-import { allPosts, Post } from 'contentlayer/generated';
+import { posts } from '#site/content';
 import { compareDesc } from 'date-fns';
 
+// Infer the Post type from the posts array
+export type Post = (typeof posts)[number];
+
 export function getAllPosts(): Post[] {
-  return allPosts.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
+  return posts.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
 }
 
 export function getPostBySlug(slug: string): Post | undefined {
-  return allPosts.find((post) => post.slugAsParams === slug);
+  return posts.find((post) => post.slugAsParams === slug);
 }
 
 export function getPostsByCategory(category: string): Post[] {
-  return allPosts
+  return posts
     .filter((post) => post.category === category)
     .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
 }
 
 export function getPostsByTag(tag: string): Post[] {
-  return allPosts
+  return posts
     .filter((post) => post.tags?.includes(tag))
     .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
 }
 
 export function getRelatedPosts(post: Post, limit: number = 3): Post[] {
-  const relatedPosts = allPosts.filter((p) => {
+  const relatedPosts = posts.filter((p) => {
     if (p.slugAsParams === post.slugAsParams) return false;
 
     // First priority: same category
@@ -51,7 +54,7 @@ export function getRelatedPosts(post: Post, limit: number = 3): Post[] {
 
 export function getAllTags(): string[] {
   const tags = new Set<string>();
-  allPosts.forEach((post) => {
+  posts.forEach((post) => {
     post.tags?.forEach((tag) => tags.add(tag));
   });
   return Array.from(tags).sort();
@@ -68,15 +71,15 @@ export function getFeaturedPostsByCategory(limit: number = 4): Record<string, Po
   return featured;
 }
 
-export function paginatePosts(posts: Post[], page: number = 1, perPage: number = 12) {
+export function paginatePosts(postsArray: Post[], page: number = 1, perPage: number = 12) {
   const start = (page - 1) * perPage;
   const end = start + perPage;
 
   return {
-    posts: posts.slice(start, end),
-    totalPages: Math.ceil(posts.length / perPage),
+    posts: postsArray.slice(start, end),
+    totalPages: Math.ceil(postsArray.length / perPage),
     currentPage: page,
-    hasNext: end < posts.length,
+    hasNext: end < postsArray.length,
     hasPrev: page > 1,
   };
 }

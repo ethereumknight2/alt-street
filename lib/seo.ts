@@ -1,5 +1,5 @@
 import { siteConfig } from './config';
-import type { Post } from 'contentlayer/generated';
+import type { Post } from './posts';
 
 export interface SEOMetadata {
   title: string;
